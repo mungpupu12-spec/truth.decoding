@@ -2,7 +2,16 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#FFF7DD">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="FM 기록표">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEe0lEQVR4nO3dS27bMBhFYdroLAvoTjLs0hp4ae0we8g8XYCRYTpQoNiyLh8yZV1S55sVRRNK/xElO4Vz+Px4C6t5eX1a74sjhHB6Pq/3xQ9146CGbdVtpU4cNOGmSiX3xkEWzu5MZHkcZNGKxYksiYMsWrQgkWPpP6CMRi0YXFkclNG00vHl3lbIoieZt5isnYMyOpM50HQclNGlnLEm4qCMjiWHG4uDMroXH7GMgzJ2IjLo4vc5sB/zcbBt7Ioa90wclLFDs0OfxkEZu3U7ep45IF3Fwbaxc5MA2DkgfcfBtoFwnQE7B6SvONg2MBpjYOeARByQjoF7Cm4MSbBzQCIOSMQBiTggHX7/ed96DTDFzgGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6QfWy8g5vTr5+UfX/7+22olFU0OKhgfl+kHxt2ewZHtqUyKHFSwPC7H20r8JMb/1lZy2YbHZRdHzjkyPI9xmQt2Oy6vOPLPjtt5jChaqtVxecUBK0ZxlF40VheZsmCRPsdlFAfcEAck4oBEHJCM4ih9i9DwLcVbCxbpc1xGccCNVxz5F43P5ZVUtFSr4/KKI+SdHaszmCNzwW7HZRdHSJ0jtzOYKblsw+My/ZH9gP/PsS3rOLAtx9sKTBAHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IFn/Gq+Jyw9Msv2opFnjyttadhsf+zT7iwRaOdENfQjYhPvO4fP7JSoaDso/kYafOZroJrJI//U3HEewP7/my0tyjyO599oOILkwbiuPYNiH4ZIWaCCOnCvMahg5i/HfNkIrL2VD9vi3PelNLDJfM3GEku3h8WffeW2LtRRHKLx9PGYMhkuqpbE4QvnjxXrz8FnJStqLIyx9/Kw1m22/+yM1GUeo8fIkf1qP/F5WWo0jmL18jWi0jOD/g7eI4aQ7J9JuFoMG3gSLsx2A7cLyNbxzjNy2kA6yGPQQx8AhkW6yGPQTx2CrRDrLYtBbHINxVGtX0mUToz7jGF0Or1YofQdxqfM4Lk2G2uWPyuraURwTux15vubf58B6iAMScUAiDkjEAYk4IBEHpOPp+bz1GuDo9Hxm54BEHJCIAxJxQDqGEHgmxcSQBDsHJOKA9BUHdxaMxhjYOSB9x8HmgXCdATsHpKs42Dx2bhIAOwekaRxsHrt1O/qZnYM+dmh26PO3FfrYFTVunjkgyTjYPHYiMujYzkEf3YuPOHFboY+OJYebfuagjy7ljDXrgZQ+OpM50MPnx1v+F315fVq6Hlgous7LXsqyhTStdHzF73PQR6MWDK7stnKJW0wrFl/Py+MYkIizO7f5e+MYkIibKnf/OnGMqGRbdZ8IK8cxQStrW/X1wX8jwHOs5n6bCwAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEe0lEQVR4nO3dS27bMBhFYdroLAvoTjLs0hp4ae0we8g8XYCRYTpQoNiyLh8yZV1S55sVRRNK/xElO4Vz+Px4C6t5eX1a74sjhHB6Pq/3xQ9146CGbdVtpU4cNOGmSiX3xkEWzu5MZHkcZNGKxYksiYMsWrQgkWPpP6CMRi0YXFkclNG00vHl3lbIoieZt5isnYMyOpM50HQclNGlnLEm4qCMjiWHG4uDMroXH7GMgzJ2IjLo4vc5sB/zcbBt7Ioa90wclLFDs0OfxkEZu3U7ep45IF3Fwbaxc5MA2DkgfcfBtoFwnQE7B6SvONg2MBpjYOeARByQjoF7Cm4MSbBzQCIOSMQBiTggHX7/ed96DTDFzgGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARB6QfWy8g5vTr5+UfX/7+22olFU0OKhgfl+kHxt2ewZHtqUyKHFSwPC7H20r8JMb/1lZy2YbHZRdHzjkyPI9xmQt2Oy6vOPLPjtt5jChaqtVxecUBK0ZxlF40VheZsmCRPsdlFAfcEAck4oBEHJCM4ih9i9DwLcVbCxbpc1xGccCNVxz5F43P5ZVUtFSr4/KKI+SdHaszmCNzwW7HZRdHSJ0jtzOYKblsw+My/ZH9gP/PsS3rOLAtx9sKTBAHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IFn/Gq+Jyw9Msv2opFnjyttadhsf+zT7iwRaOdENfQjYhPvO4fP7JSoaDso/kYafOZroJrJI//U3HEewP7/my0tyjyO599oOILkwbiuPYNiH4ZIWaCCOnCvMahg5i/HfNkIrL2VD9vi3PelNLDJfM3GEku3h8WffeW2LtRRHKLx9PGYMhkuqpbE4QvnjxXrz8FnJStqLIyx9/Kw1m22/+yM1GUeo8fIkf1qP/F5WWo0jmL18jWi0jOD/g7eI4aQ7J9JuFoMG3gSLsx2A7cLyNbxzjNy2kA6yGPQQx8AhkW6yGPQTx2CrRDrLYtBbHINxVGtX0mUToz7jGF0Or1YofQdxqfM4Lk2G2uWPyuraURwTux15vubf58B6iAMScUAiDkjEAYk4IBEHpOPp+bz1GuDo9Hxm54BEHJCIAxJxQDqGEHgmxcSQBDsHJOKA9BUHdxaMxhjYOSB9x8HmgXCdATsHpKs42Dx2bhIAOwekaRxsHrt1O/qZnYM+dmh26PO3FfrYFTVunjkgyTjYPHYiMujYzkEf3YuPOHFboY+OJYebfuagjy7ljDXrgZQ+OpM50MPnx1v+F315fVq6Hlgous7LXsqyhTStdHzF73PQR6MWDK7stnKJW0wrFl/Py+MYkIizO7f5e+MYkIibKnf/OnGMqGRbdZ8IK8cxQStrW/X1wX8jwHOs5n6bCwAAAABJRU5ErkJggg==">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22FM%20%EC%A6%9D%EC%83%81%20%EA%B8%B0%EB%A1%9D%ED%91%9C%22%2C%22short_name%22%3A%22FM%20%EA%B8%B0%EB%A1%9D%ED%91%9C%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23FFF7DD%22%2C%22theme_color%22%3A%22%23FFF7DD%22%7D">
+
 <title>섬유근육통(Fibromyalgia, FM) 증상 기록표</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,23 +131,17 @@
   .item.checked .item-detail{display:flex;}
 
   .nrs{display:flex;align-items:center;gap:0.75rem;}
-  .nrs-track{position:relative;flex:1;height:28px;display:flex;align-items:center;}
-  .nrs-track input[type=range]{
-    width:100%;-webkit-appearance:none;appearance:none;height:3px;
-    background:var(--ink);border-radius:2px;outline:none;
+  .nrs-stepper{display:flex;align-items:center;gap:0.6rem;}
+  .nrs-btn{
+    width:36px;height:36px;border-radius:50%;border:1px solid var(--ink);
+    background:var(--card);color:var(--ink);font-size:1.15rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    flex-shrink:0;line-height:1;padding:0;
   }
-  .nrs-track input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance:none;width:16px;height:16px;border-radius:50%;
-    background:var(--teal);border:2px solid var(--card);cursor:pointer;margin-top:-1px;
-  }
-  .nrs-track input[type=range]::-moz-range-thumb{
-    width:14px;height:14px;border-radius:50%;background:var(--teal);border:2px solid var(--card);cursor:pointer;
-  }
-  .nrs-ticks{position:absolute;top:16px;left:0;right:0;display:flex;justify-content:space-between;pointer-events:none;}
-  .nrs-ticks span{width:1px;height:5px;background:var(--line);}
+  .nrs-btn:active{background:var(--teal);color:#fff;border-color:var(--teal);}
   .nrs-val{
-    font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:0.95rem;
-    min-width:2.2rem;text-align:center;padding:0.15rem 0;border-radius:5px;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:1.1rem;
+    min-width:2.3rem;text-align:center;padding:0.15rem 0;border-radius:5px;
   }
   .nrs-val.n0-3{color:var(--teal-dark);}
   .nrs-val.n4-6{color:var(--amber);}
@@ -200,6 +203,17 @@
   button.secondary:hover{background:var(--card);}
 
   /* ---- report panel ---- */
+  .incident-box{
+    background:var(--flag-tint);border:1px solid var(--flag);border-radius:var(--radius);
+    padding:0.9rem 1.1rem;margin-bottom:1.2rem;
+  }
+  .incident-title{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.03em;color:var(--flag);margin-bottom:0.5rem;}
+  .incident-display{font-size:0.92rem;color:var(--ink);}
+  .incident-display .incident-days{font-weight:700;color:var(--flag);}
+  .incident-form{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;}
+  .incident-form input[type=date]{font-family:'IBM Plex Mono',monospace;font-size:0.85rem;padding:0.4rem 0.6rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);}
+  .incident-form input[type=text]{flex:1;min-width:180px;font-size:0.85rem;padding:0.4rem 0.6rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);}
+
   .nrs-scale{
     background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
     padding:1rem 1.3rem 1.1rem;margin-bottom:1.2rem;
@@ -250,6 +264,24 @@
   .ai-copy-row{display:flex;align-items:center;gap:0.7rem;margin-top:1.5rem;}
   .ai-copy-status{font-size:0.8rem;color:var(--teal-dark);}
 
+  .chart-page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+  .chart-page-title{font-family:'Source Serif 4',Georgia,serif;font-size:1.15rem;font-weight:600;color:var(--ink);}
+  .heatmap-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .heatmap-table{border-collapse:collapse;font-size:0.72rem;white-space:nowrap;}
+  .heatmap-table th, .heatmap-table td{padding:0.35rem 0.5rem;text-align:center;border:1px solid var(--line);}
+  .heatmap-table th{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--ink-soft);background:var(--card);position:sticky;top:0;}
+  .heatmap-table td.hm-date{font-family:'IBM Plex Mono',monospace;color:var(--ink-soft);text-align:left;position:sticky;left:0;background:var(--paper);}
+  .heatmap-table td.hm-cell{color:var(--ink);font-weight:600;}
+  .heatmap-legend{display:flex;align-items:center;gap:0.5rem;margin-top:0.8rem;font-size:0.76rem;color:var(--ink-soft);}
+  .heatmap-legend-swatches{display:flex;}
+  .heatmap-legend-swatches span{width:22px;height:12px;}
+  @media print{
+    .tabs, .actions, .ai-copy-row, .incident-form, #incident-display button, .footer-notice, .disclaimer{display:none !important;}
+    body{background:#fff;}
+    .panel{display:none !important;}
+    .panel.chart{display:block !important;}
+  }
+
   .history{border-top:2px solid var(--ink);padding-top:1.2rem;}
   .history h2{font-family:'Source Serif 4',Georgia,serif;font-size:1.05rem;margin:0 0 0.9rem;}
   .ledger-row{
@@ -298,7 +330,6 @@
     font-size:1.75rem;line-height:1.35;margin:0 0 1rem;color:var(--ink);
   }
   .landing-inner p{font-size:0.95rem;color:var(--ink-soft);margin:0 0 1.2rem;line-height:1.6;}
-  #landing-emoji{font-size:2.6rem;margin:0 0 1.4rem;line-height:1;}
   #landing-start-btn{
     display:inline-flex;flex-direction:column;align-items:center;gap:0.7rem;
     background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;
@@ -314,6 +345,19 @@
   #landing-start-btn .btn-label{font-size:0.95rem;font-weight:600;color:var(--ink);}
 
   /* ---- report charts ---- */
+  .clinical-note{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--teal);
+    border-radius:var(--radius);padding:1.1rem 1.3rem;margin-bottom:1.5rem;
+  }
+  .clinical-note-title{font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:0.8rem;}
+  .clinical-note p{margin:0 0 0.9rem;font-size:0.9rem;line-height:1.65;color:var(--ink);}
+  .cn-q{font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.02em;}
+  .clinical-note-meta{font-size:0.8rem;color:var(--ink-soft);}
+  .clinical-note-caveat{
+    font-size:0.82rem;font-weight:600;color:var(--teal-dark);background:var(--teal-tint);
+    border-radius:6px;padding:0.5rem 0.7rem;margin:0 0 0.9rem !important;font-style:normal;
+  }
+
   .today-summary-box{
     background:#FFF8E7;border:1px solid var(--line);border-radius:var(--radius);
     padding:1rem 1.2rem;margin-bottom:1.5rem;
@@ -348,10 +392,32 @@
     border-radius:var(--radius);padding:0.7rem 1rem;margin-bottom:1.2rem;
   }
   @media(max-width:480px){
+    .wrap{padding:1.6rem 1rem 1rem;}
     .masthead{flex-direction:column;align-items:flex-start;gap:0.4rem;}
+    .masthead h1{font-size:1.3rem;}
     .masthead .sub{text-align:left;}
+    .disclaimer{font-size:1rem;}
+    .footer-notice{white-space:normal;font-size:0.78rem;}
     .ledger-row{grid-template-columns:4.2rem 1fr;}
     .ledger-row .ld-flag, .ledger-row .actions-cell{grid-column:1/-1;}
+    .nrs-scale-points{flex-direction:column;gap:0.7rem;}
+    .nrs-scale-point, .nrs-scale-point:first-child, .nrs-scale-point:nth-child(2), .nrs-scale-point:last-child{
+      align-items:flex-start;text-align:left;
+    }
+    .ns-label{max-width:none;}
+    .report-charts{gap:1.2rem;}
+    .chart-block{max-width:100%;}
+    .item-row label{font-size:0.86rem;}
+    .parts-chip, .mood-chip{font-size:0.76rem;padding:0.28rem 0.6rem;}
+    .diary-head{gap:0.7rem;}
+    .actions{flex-direction:column;align-items:stretch;}
+    .actions button{width:100%;}
+    .incident-form{flex-direction:column;align-items:stretch;}
+    .incident-form input[type=text]{min-width:0;}
+    .nrs-btn{width:32px;height:32px;font-size:1rem;}
+    .nrs-val{min-width:2rem;}
+    #landing-start-btn .icon-circle{width:72px;height:72px;}
+    .landing-inner h1{font-size:1.4rem;}
   }
 </style>
 </head>
@@ -361,7 +427,6 @@
   <div class="landing-inner">
     <h1>섬유근육통 환자를 위한<br>통증 일지</h1>
     <p>매일의 증상과 감정을 기록하며,<br>나만의 패턴을 찾아가는 공간이에요.<br>이 기록은 나중에 진료실에서도<br>큰 힘이 되어줄 거예요.</p>
-    <div id="landing-emoji"></div>
     <button id="landing-start-btn" onclick="goToAuth()">
       <span class="icon-circle">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -410,6 +475,7 @@
     <button class="tab" id="tab-concept" onclick="switchTab('concept')">개념 정리</button>
     <button class="tab" id="tab-diary" onclick="switchTab('diary')">오늘의 기록</button>
     <button class="tab" id="tab-report" onclick="switchTab('report')">리포트</button>
+    <button class="tab" id="tab-chart" onclick="switchTab('chart')">전체 차트</button>
   </div>
 
   <div class="panel concept" id="panel-concept">
@@ -535,6 +601,15 @@
   </div>
 
   <div class="panel report" id="panel-report">
+    <div class="incident-box">
+      <div class="incident-title">기준 사건 (사고·발병 등)</div>
+      <div id="incident-display" class="incident-display" style="display:none;"></div>
+      <div id="incident-form" class="incident-form">
+        <input type="date" id="incident-date">
+        <input type="text" id="incident-desc" placeholder="예: 자전거 정면충돌 뺑소니 사고 (오전 10시경)">
+        <button class="secondary" onclick="saveIncident()">저장</button>
+      </div>
+    </div>
     <div class="nrs-scale">
       <div class="nrs-scale-title">통증 강도(NRS) 기준</div>
       <div class="nrs-scale-line"></div>
@@ -556,6 +631,17 @@
       <span id="ai-copy-status" class="ai-copy-status"></span>
     </div>
     <div class="summary-box" id="ai-copy-box"></div>
+  </div>
+
+  <div class="panel chart" id="panel-chart">
+    <div class="chart-page-head">
+      <div>
+        <div class="chart-page-title">전체 기록 차트</div>
+        <div id="chart-range-meta" class="report-meta"></div>
+      </div>
+      <button class="secondary" onclick="window.print()">인쇄 / PDF로 저장</button>
+    </div>
+    <div id="chart-page-body"></div>
   </div>
 
   <div class="footer-notice">이 문서는 교육·의료진과의 의사소통·장기 관찰을 위한 자료이며 진단이나 처방을 대신하지 않습니다.</div>
@@ -631,16 +717,6 @@ function goToAuth(){
   document.getElementById('landing-page').style.display = 'none';
   document.getElementById('auth-gate').style.display = 'block';
 }
-
-const SMILE_EMOJIS = ['😊','😄','😁','🙂','😆','😀','🤗','😌','🥰','😃','🙃','😻'];
-function showDailyEmoji(){
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const dayOfYear = Math.floor((now - start) / 86400000);
-  const el = document.getElementById('landing-emoji');
-  if(el) el.textContent = SMILE_EMOJIS[dayOfYear % SMILE_EMOJIS.length];
-}
-showDailyEmoji();
 
 auth.onAuthStateChanged(async user => {
   if(user){
@@ -878,10 +954,13 @@ function switchTab(name){
   document.getElementById('tab-concept').classList.toggle('active', name==='concept');
   document.getElementById('tab-diary').classList.toggle('active', name==='diary');
   document.getElementById('tab-report').classList.toggle('active', name==='report');
+  document.getElementById('tab-chart').classList.toggle('active', name==='chart');
   document.getElementById('panel-concept').classList.toggle('active', name==='concept');
   document.getElementById('panel-diary').classList.toggle('active', name==='diary');
   document.getElementById('panel-report').classList.toggle('active', name==='report');
+  document.getElementById('panel-chart').classList.toggle('active', name==='chart');
   if(name === 'report'){ renderReport(currentReportPeriod); }
+  if(name === 'chart'){ renderFullChart(); }
 }
 
 let currentReportPeriod = 'today';
@@ -961,6 +1040,44 @@ function buildTodaySummary(checked){
   return `<div class="today-summary-box"><p>${line1}</p><p>${line2}</p></div>`;
 }
 
+function buildClinicalNote(checked){
+  if(!checked.length) return '';
+  const q1 = checked.map(it => {
+    const s = currentEntry.items[it.id];
+    const partsStr = s.parts && s.parts.length ? ` (${s.parts.join(', ')})` : '';
+    return `${it.label}${partsStr} — NRS ${s.nrs}`;
+  }).join('<br>');
+
+  let q2;
+  if(currentEntry.specialNote){
+    q2 = `"${currentEntry.specialNote}"`;
+  } else if(currentEntry.diaryLine){
+    q2 = `"${currentEntry.diaryLine}"`;
+  } else {
+    q2 = '오늘은 특이사항이 따로 기록되어 있지 않습니다. "오늘의 특이사항"에 계기나 상황을 적어두시면 다음부터 이 자리에 그대로 반영돼요.';
+  }
+
+  let incidentNote = '';
+  if(currentIncidentData && currentIncidentData.date){
+    const start = new Date(currentIncidentData.date + 'T00:00:00');
+    const entryDateStr = document.getElementById('entry-date').value || todayStr();
+    const entryDate = new Date(entryDateStr + 'T00:00:00');
+    const days = Math.floor((entryDate - start) / 86400000);
+    if(days >= 0){
+      incidentNote = `<p class="clinical-note-meta">참고 — 기준 사건(${currentIncidentData.date} · ${currentIncidentData.desc||''}) 이후 ${days}일째 기록입니다.</p>`;
+    }
+  }
+
+  return `<div class="clinical-note">
+    <div class="clinical-note-title">임상 문진 노트 (기록 기반 서술)</div>
+    <p class="clinical-note-caveat">이 노트는 실제 진단이 아니라, 직접 체크·기록하신 내용을 문진 형식으로 정리한 것입니다. 진료 시 참고 자료로 활용해주세요.</p>
+    <p><span class="cn-q">Q1. 오늘 어디가 아프셨나요?</span><br>${q1}</p>
+    <p><span class="cn-q">Q2. 왜 오늘 그곳이 아팠을까요?</span><br>${q2}</p>
+    ${incidentNote}
+    <p class="clinical-note-caveat">이 노트는 실제 진단이 아니라, 직접 체크·기록하신 내용을 문진 형식으로 정리한 것입니다. 진료 시 참고 자료로 활용해주세요.</p>
+  </div>`;
+}
+
 function renderTodayReport(container, metaEl){
   metaEl.textContent = `${todayStr()} 기준 · 오늘 체크한 증상의 강도(NRS)`;
   const checked = PAIN_ITEMS.filter(it => currentEntry.items[it.id].checked);
@@ -972,7 +1089,7 @@ function renderTodayReport(container, metaEl){
   const perItemValues = checked.map(it => ({ cat: it.cat, value: currentEntry.items[it.id].nrs * 10 }));
   const cats = {};
   checked.forEach(it => { (cats[it.cat] = cats[it.cat]||[]).push(it); });
-  let html = buildTodaySummary(checked) + buildChartsHtml(perItemValues);
+  let html = buildTodaySummary(checked) + buildClinicalNote(checked) + buildChartsHtml(perItemValues);
   Object.keys(cats).forEach(catName => {
     html += `<div class="report-cat-group"><div class="report-cat-title">${CAT_ICON[catName]||''} ${catName}</div>`;
     cats[catName].forEach(it => {
@@ -1132,11 +1249,11 @@ function renderItems(){
           ${partsHtml}
           <div class="nrs">
             <span style="font-size:0.78rem;color:var(--ink-soft);white-space:nowrap;">강도 (NRS)</span>
-            <div class="nrs-track">
-              <input type="range" min="0" max="10" step="1" value="${state.nrs}" id="nrs-${it.id}">
-              <div class="nrs-ticks">${'<span></span>'.repeat(11)}</div>
+            <div class="nrs-stepper">
+              <button type="button" class="nrs-btn nrs-minus" id="nrsminus-${it.id}">−</button>
+              <span class="nrs-val ${nrsClass(state.nrs)}" id="nrsval-${it.id}">${state.nrs}</span>
+              <button type="button" class="nrs-btn nrs-plus" id="nrsplus-${it.id}">+</button>
             </div>
-            <span class="nrs-val ${nrsClass(state.nrs)}" id="nrsval-${it.id}">${state.nrs}</span>
           </div>
           <textarea placeholder="양상·메모 (선택)" id="note-${it.id}">${state.note}</textarea>
         </div>`;
@@ -1164,14 +1281,16 @@ function renderItems(){
           });
         });
       }
-      row.querySelector('#nrs-'+it.id).addEventListener('input', e => {
-        const v = parseInt(e.target.value,10);
+      function adjustNrs(delta){
+        const v = Math.max(0, Math.min(10, currentEntry.items[it.id].nrs + delta));
         currentEntry.items[it.id].nrs = v;
         const valEl = document.getElementById('nrsval-'+it.id);
         valEl.textContent = v;
         valEl.className = 'nrs-val ' + nrsClass(v);
         markUnsaved();
-      });
+      }
+      row.querySelector('#nrsminus-'+it.id).addEventListener('click', () => adjustNrs(-1));
+      row.querySelector('#nrsplus-'+it.id).addEventListener('click', () => adjustNrs(1));
       row.querySelector('#note-'+it.id).addEventListener('input', e => {
         currentEntry.items[it.id].note = e.target.value;
         markUnsaved();
@@ -1369,6 +1488,75 @@ async function renderHistory(){
 
 let appInitialized = false;
 
+function hmColor(nrs){
+  if(nrs === null || nrs === undefined) return '';
+  const t = Math.min(1, nrs / 10);
+  const cLow = [234, 245, 252];
+  const cHigh = [242, 120, 120];
+  const r = Math.round(cLow[0] + (cHigh[0]-cLow[0])*t);
+  const g = Math.round(cLow[1] + (cHigh[1]-cLow[1])*t);
+  const b = Math.round(cLow[2] + (cHigh[2]-cLow[2])*t);
+  return `rgb(${r},${g},${b})`;
+}
+
+async function renderFullChart(){
+  const metaEl = document.getElementById('chart-range-meta');
+  const bodyEl = document.getElementById('chart-page-body');
+  metaEl.textContent = '불러오는 중...';
+  bodyEl.innerHTML = '';
+  let snap;
+  try{
+    snap = await db.collection('users').doc(currentUid).collection('entries')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'asc').get();
+  }catch(e){
+    metaEl.textContent = '';
+    bodyEl.innerHTML = '<p class="report-empty">기록을 불러오지 못했습니다.</p>';
+    return;
+  }
+  if(snap.empty){
+    metaEl.textContent = '';
+    bodyEl.innerHTML = '<p class="report-empty">아직 저장된 기록이 없습니다.</p>';
+    return;
+  }
+  const dates = snap.docs.map(d => d.id);
+  metaEl.textContent = `${dates[0]} ~ ${dates[dates.length-1]} · 총 ${dates.length}일 기록`;
+
+  const categories = Object.keys(CAT_ICON);
+  let rows = '';
+  snap.docs.forEach(docSnap => {
+    const entry = normalizeEntry(docSnap.data());
+    let rowCells = `<td class="hm-date">${docSnap.id}</td>`;
+    categories.forEach(cat => {
+      const itemsInCat = PAIN_ITEMS.filter(it => it.cat === cat);
+      const checkedInCat = itemsInCat.filter(it => entry.items[it.id] && entry.items[it.id].checked);
+      if(!checkedInCat.length){
+        rowCells += `<td class="hm-cell"></td>`;
+      } else {
+        const avg = Math.round(checkedInCat.reduce((s,it)=>s+entry.items[it.id].nrs,0)/checkedInCat.length * 10)/10;
+        rowCells += `<td class="hm-cell" style="background:${hmColor(avg)}">${avg}</td>`;
+      }
+    });
+    rows += `<tr>${rowCells}</tr>`;
+  });
+
+  const headerCells = categories.map(cat => `<th>${CAT_ICON[cat]}<br>${cat}</th>`).join('');
+  bodyEl.innerHTML = `
+    <div class="heatmap-wrap">
+      <table class="heatmap-table">
+        <tr><th>날짜</th>${headerCells}</tr>
+        ${rows}
+      </table>
+    </div>
+    <div class="heatmap-legend">
+      <span>NRS</span>
+      <div class="heatmap-legend-swatches">
+        ${[0,2,4,6,8,10].map(v => `<span style="background:${hmColor(v)}"></span>`).join('')}
+      </div>
+      <span>0 → 10</span>
+      <span style="margin-left:1rem;">빈 칸 = 그날 해당 카테고리 체크 없음</span>
+    </div>`;
+}
+
 async function initApp(){
   const dateInput = document.getElementById('entry-date');
   dateInput.value = todayStr();
@@ -1382,6 +1570,7 @@ async function initApp(){
   }
   await renderHistory();
   await loadEntry(dateInput.value);
+  await loadIncident();
 
   let hasAnyEntry = false;
   try{
@@ -1389,6 +1578,51 @@ async function initApp(){
     hasAnyEntry = !snap.empty;
   }catch(e){ hasAnyEntry = false; }
   switchTab(hasAnyEntry ? 'diary' : 'concept');
+}
+
+let currentIncidentData = null;
+
+async function loadIncident(){
+  try{
+    const doc = await db.collection('users').doc(currentUid).collection('meta').doc('incident').get();
+    if(doc.exists){
+      currentIncidentData = doc.data();
+      renderIncidentDisplay(currentIncidentData);
+    }
+  }catch(e){ /* 저장된 사건 없음 */ }
+}
+
+function renderIncidentDisplay(data){
+  const display = document.getElementById('incident-display');
+  const form = document.getElementById('incident-form');
+  const start = new Date(data.date + 'T00:00:00');
+  const now = new Date();
+  const days = Math.floor((now - start) / 86400000);
+  display.innerHTML = `${data.date} — ${data.desc || ''} <span class="incident-days">(오늘은 사건 후 ${days}일째)</span> <button class="secondary" onclick="editIncident()" style="margin-left:0.6rem;">수정</button>`;
+  display.style.display = 'block';
+  form.style.display = 'none';
+}
+
+function editIncident(){
+  if(currentIncidentData){
+    document.getElementById('incident-date').value = currentIncidentData.date || '';
+    document.getElementById('incident-desc').value = currentIncidentData.desc || '';
+  }
+  document.getElementById('incident-display').style.display = 'none';
+  document.getElementById('incident-form').style.display = 'flex';
+}
+
+async function saveIncident(){
+  const date = document.getElementById('incident-date').value;
+  const desc = document.getElementById('incident-desc').value;
+  if(!date){ alert('날짜를 입력해주세요.'); return; }
+  try{
+    await db.collection('users').doc(currentUid).collection('meta').doc('incident').set({date, desc});
+    currentIncidentData = {date, desc};
+    renderIncidentDisplay(currentIncidentData);
+  }catch(e){
+    alert('저장에 실패했습니다. 다시 시도해주세요.');
+  }
 }
 </script>
 </body>
