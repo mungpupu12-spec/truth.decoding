@@ -177,6 +177,12 @@
   .flagged legend{color:var(--flag);}
   .hint{font-size:0.78rem;color:var(--ink-soft);margin-left:1.75rem;}
 
+
+  .interp-box{background:var(--teal-tint);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:1.2rem;line-height:1.7;font-size:0.95rem;}
+  .interp-box h4{margin:0 0 .5rem;font-size:1rem;}
+  .interp-box p{margin:.35rem 0;}
+  .interp-chip{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.1rem .6rem;margin:.1rem .15rem;font-size:.85rem;}
+  .interp-note{font-size:.78rem;color:var(--ink-soft);margin-top:.6rem;}
   .memo-block{margin-bottom:1.5rem;}
   .memo-block label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);margin-bottom:0.4rem;}
   #diary-line, #general-memo, #special-note{
@@ -612,7 +618,7 @@
       <div id="incident-display" class="incident-display" style="display:none;"></div>
       <div id="incident-form" class="incident-form">
         <input type="date" id="incident-date">
-        <input type="text" id="incident-desc" placeholder="예: 자전거 정면충돌 뺑소니 사고 (오전 10시경)">
+        <input type="text" id="incident-desc" placeholder="예: 계단에서 넘어져 허리를 부딪힘 (오후 3시경)">
         <button class="secondary" onclick="saveIncident()">저장</button>
       </div>
     </div>
@@ -1126,6 +1132,76 @@ function renderTodayReport(container, metaEl){
   lastReportSummaryText = textLines.join('\n');
 }
 
+
+const STOPWORDS = new Set(['오늘','어제','정말','너무','조금','계속','그냥','있음','없음','있다','없다','있어','없어','하고','해서','했다','했음','한다','같다','같음','느낌','때문','이후','이번','아주','많이','진짜','그리고','하지만','그래서','약간','다시','그런','이런','저런','하는','되는','있는','없는','입니다','합니다','했어','했는데','인데','에서','으로','때문에']);
+function extractWords(entries){
+  const counts = {};
+  const josa = /(은|는|이|가|을|를|에|의|도|로|와|과|에서|으로|까지|부터|처럼|만|라|고)$/;
+  entries.forEach(e=>{
+    const texts = [e.memo, e.diaryLine, e.specialNote];
+    Object.values(e.items||{}).forEach(i=>{ if(i && i.note) texts.push(i.note); });
+    texts.filter(Boolean).forEach(t=>{
+      (t.match(/[가-힣]{2,}/g)||[]).forEach(w=>{
+        let base = w;
+        if(base.length>2 && josa.test(base)) base = base.replace(josa,'');
+        if(base.length<2 || STOPWORDS.has(base) || STOPWORDS.has(w)) return;
+        counts[base] = (counts[base]||0)+1;
+      });
+    });
+  });
+  return Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,10);
+}
+function buildInterpretation(entries, ranked, prevEntries, label){
+  const n = entries.length;
+  const partCounts = {};
+  entries.forEach(e=>{
+    Object.values(e.items||{}).forEach(i=>{
+      if(i && i.checked && Array.isArray(i.parts)) i.parts.forEach(p=>{ partCounts[p]=(partCounts[p]||0)+1; });
+    });
+  });
+  const parts = Object.entries(partCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const words = extractWords(entries);
+  const topFreq = ranked.slice(0,3);
+  const topStrong = ranked.filter(x=>x.count>=Math.min(2,n)).sort((a,b)=>b.avgNrs-a.avgNrs).slice(0,3);
+  const avgAll = arr => { const v=[]; arr.forEach(e=>Object.values(e.items||{}).forEach(i=>{ if(i&&i.checked&&typeof i.nrs==='number') v.push(i.nrs); })); return v.length ? Math.round(v.reduce((a,b)=>a+b,0)/v.length*10)/10 : null; };
+  const cur = avgAll(entries), prev = prevEntries && prevEntries.length ? avgAll(prevEntries) : null;
+  const chips = arr => arr.map(x=>`<span class="interp-chip">${x}</span>`).join('');
+  let html = `<div class="interp-box"><h4>📝 ${label} 해석 리포트</h4>`;
+  let text = [`[${label} 해석 요약]`];
+  if(topFreq.length){
+    const s = topFreq.map(x=>`${x.label}(${x.pct}%)`).join(', ');
+    html += `<p><b>가장 자주 호소한 증상</b>: ${s}</p>`;
+    text.push('가장 자주 호소한 증상: '+s);
+  }
+  if(topStrong.length){
+    const s = topStrong.map(x=>`${x.label}(평균 NRS ${x.avgNrs})`).join(', ');
+    html += `<p><b>가장 강하게 느낀 증상</b>: ${s}</p>`;
+    text.push('가장 강하게 느낀 증상: '+s);
+  }
+  if(parts.length){
+    html += `<p><b>자주 언급된 부위</b><br>${chips(parts.map(([p,c])=>`${p} ${c}회`))}</p>`;
+    text.push('자주 언급된 부위: '+parts.map(([p,c])=>`${p} ${c}회`).join(', '));
+  }
+  if(words.length){
+    html += `<p><b>자주 쓴 표현</b> (기록·메모 글 기준)<br>${chips(words.map(([w,c])=>`${w} ${c}`))}</p>`;
+    text.push('자주 쓴 표현: '+words.map(([w,c])=>`${w} ${c}회`).join(', '));
+  }
+  if(cur!==null){
+    let trend = `${label} 체크 증상 평균 NRS는 ${cur}입니다.`;
+    if(prev!==null){
+      const d = Math.round((cur-prev)*10)/10;
+      trend += d>0.3 ? ` 직전 기간(${prev})보다 ${d} 높아 악화 경향입니다.` : d<-0.3 ? ` 직전 기간(${prev})보다 ${Math.abs(d)} 낮아 완화 경향입니다.` : ` 직전 기간(${prev})과 비슷합니다.`;
+    }
+    html += `<p><b>경향</b>: ${trend}</p>`;
+    text.push('경향: '+trend);
+  }
+  if(!parts.length && !words.length && !topFreq.length) return {html:'', text:''};
+  const lead = topFreq.length ? `${label} 동안 주로 ${topFreq.map(x=>x.label).join('·')} 관련 호소가 많았습니다${parts.length?`, 부위로는 ${parts.slice(0,3).map(p=>p[0]).join('·')}이(가) 자주 언급되었습니다`:''}.` : '';
+  if(lead){ html = html.replace('</h4>','</h4><p>'+lead+'</p>'); text.splice(1,0,lead); }
+  html += `<div class="interp-note">기록된 내용을 단순 집계한 것으로 진단이 아니며, 의료진 상담 시 참고용으로만 활용하세요.</div></div>`;
+  return {html, text:text.join('\n')};
+}
+
 async function renderPeriodReport(container, metaEl, days, label){
   metaEl.textContent = '불러오는 중...';
   container.innerHTML = '';
@@ -1169,7 +1245,10 @@ async function renderPeriodReport(container, metaEl, days, label){
   const cats = {};
   ranked.forEach(it => { (cats[it.cat] = cats[it.cat]||[]).push(it); });
   const perItemValues = ranked.map(it => ({ cat: it.cat, value: it.pct }));
-  let html = buildChartsHtml(perItemValues);
+  let prevEntries = [];
+  try{ prevEntries = await fetchEntriesInRange(shiftDateStr(startDate,-days), shiftDateStr(startDate,-1)); }catch(e){}
+  const interp = buildInterpretation(entries, ranked, prevEntries, label);
+  let html = interp.html + buildChartsHtml(perItemValues);
   Object.keys(cats).forEach(catName => {
     html += `<div class="report-cat-group"><div class="report-cat-title">${CAT_ICON[catName]||''} ${catName}</div>`;
     cats[catName].forEach(it => {
@@ -1203,6 +1282,7 @@ async function renderPeriodReport(container, metaEl, days, label){
       textLines.push(`- ${label}: ${Math.round((count/entries.length)*100)}%`);
     });
   }
+  if(interp.text) textLines.push('', interp.text);
   lastReportSummaryText = textLines.join('\n');
 }
 
